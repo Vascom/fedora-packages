@@ -52,12 +52,12 @@ make %{?_smp_mflags}
 %postun -n %{name} -p /sbin/ldconfig
 
 %files 
+%doc AUTHORS CHANGELOG LICENSE.LGPL README
 %{_libdir}/libqxmpp.so.0
 %{_libdir}/libqxmpp.so.0.7
 %{_libdir}/libqxmpp.so.0.7.3
 
 %files devel
-%doc AUTHORS CHANGELOG LICENSE.LGPL README
 %doc %{_datadir}/doc/qxmpp
 %{_libdir}/lib%{name}.so
 %{_includedir}/%{name}
