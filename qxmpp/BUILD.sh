@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-wget http://qxmpp.googlecode.com/files/qxmpp-0.7.3.tar.gz
+wget $(cat qxmpp.spec | grep Source0 | awk '{print $2}')
 mkdir -p ~/rpmbuild/SOURCES
-mv qxmpp-0.7.3.tar.gz ~/rpmbuild/SOURCES
+mv qxmpp-*.tar.gz ~/rpmbuild/SOURCES
 cp *.patch ~/rpmbuild/SOURCES
 rpmbuild -ba --clean qxmpp.spec
