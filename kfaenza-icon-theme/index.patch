@@ -1,0 +1,12 @@
+diff -ru ../KFaenza/index.theme ./index.theme
+--- ../KFaenza/index.theme	2011-10-08 22:00:02.000000000 +0300
++++ ./index.theme	2012-07-01 14:54:52.021329891 +0300
+@@ -6,7 +6,7 @@
+ 
+ DisplayDepth=32
+ 
+-Inherits=Faenza,oxygen,hicolor
++Inherits=faenza
+ 
+ Version=0.8.6
+ 
