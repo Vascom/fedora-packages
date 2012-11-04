@@ -1,17 +1,17 @@
 Name:       spacefm 
 Version:    0.8.2
-Release:    2%{?dist}
-License:    GPLv3 or LGPLv3
+Release:    3%{?dist}
+License:    GPLv3 and LGPLv3
 Source0:    http://downloads.sourceforge.net/spacefm/spacefm-0.8.2.tar.xz
 
 Summary:    Space FM File Manager 
 URL:        http://ignorantguru.github.com/spacefm/  
 
-BuildRequires:  xz
 BuildRequires:  gtk2-devel
 BuildRequires:  intltool
 BuildRequires:  libudev-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  startup-notification-devel 
 
 %description
 SpaceFM is a multi-panel tabbed file manager for Linux with built-in VFS,
@@ -27,11 +27,12 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=${RPM_BUILD_ROOT}
 
+%find_lang %{name}
+
+%check
 desktop-file-validate ${RPM_BUILD_ROOT}/%{_datadir}/applications/spacefm-find.desktop
 desktop-file-validate ${RPM_BUILD_ROOT}/%{_datadir}/applications/spacefm-folder-handler.desktop
 desktop-file-validate ${RPM_BUILD_ROOT}/%{_datadir}/applications/spacefm.desktop
-
-%find_lang %{name}
 
 %post
 update-desktop-database &> /dev/null || :
@@ -54,6 +55,10 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/spacefm
 
 %changelog
+* Sun Nov 04 2012 Minh Ngo <minh@fedorapeople.org> 0.8.2-3
+- fixing licenses
+- updating dependencies
+
 * Sun Nov 04 2012 Minh Ngo <minh@fedorapeople.org> 0.8.2-2
 - validate desktop files
 - adding some scriptlets for mime files
