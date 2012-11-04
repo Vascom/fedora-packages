@@ -11,6 +11,7 @@ BuildRequires:  xz
 BuildRequires:  gtk2-devel
 BuildRequires:  intltool
 BuildRequires:  gettext
+BuildRequires:  libudev-devel
 
 %description
 SpaceFM is a multi-panel tabbed file manager for Linux with built-in VFS,
