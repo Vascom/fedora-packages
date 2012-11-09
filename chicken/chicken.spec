@@ -31,18 +31,18 @@ CHICKEN Scheme compiler documentation.
 %setup -q
 
 %build
-make %{?_smp_mflags} PLATFORM=linux STATICBUILD=1 
+make %{?_smp_mflags} PLATFORM=linux STATICBUILD=1 PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 %install
-%make_install PLATFORM=linux PREFIX=%{_prefix}
+%make_install PLATFORM=linux PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 %post -n %{name} -p /sbin/ldconfig
 %postun -n %{name} -p /sbin/ldconfig
 
 %files
-%{_prefix}/lib/libchicken.so
-%{_prefix}/lib/libchicken.so.6
-%{_prefix}/lib/chicken
+%{_libdir}/libchicken.so
+%{_libdir}/libchicken.so.6
+%{_libdir}/chicken
 %{_includedir}/chicken
 %{_bindir}/csc
 %{_bindir}/csi
@@ -56,7 +56,7 @@ make %{?_smp_mflags} PLATFORM=linux STATICBUILD=1
 %{_datadir}/chicken/setup.defaults
 
 %files static 
-%{_prefix}/lib/libchicken.a
+%{_libdir}/libchicken.a
 
 %files doc
 %doc %{_datadir}/chicken/doc
