@@ -1,7 +1,7 @@
 Name:       chicken 
 Version:    4.7.0.6 
 Release:    1%{?dist}
-License:    GPLv3
+License:    GPLv2 and BSD and MIT
 Source0:    http://code.call-cc.org/stability/4.7.0/chicken-4.7.0.6.tar.gz
 
 Summary:    A compiler for the Scheme programming language
