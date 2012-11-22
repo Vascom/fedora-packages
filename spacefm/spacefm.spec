@@ -1,6 +1,6 @@
 Name:       spacefm 
 Version:    0.8.2
-Release:    3%{?dist}
+Release:    4%{?dist}
 License:    GPLv3 and LGPLv3
 Source0:    http://downloads.sourceforge.net/spacefm/spacefm-0.8.2.tar.xz
 
