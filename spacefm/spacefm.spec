@@ -43,7 +43,7 @@ update-desktop-database &> /dev/null || :
 update-mime-database %{_datadir}/mime &> /dev/null || :
 
 %files -f %{name}.lang
-%doc COPYING COPYING-LGPL AUTHORS INSTALL README NEWS TRANSLATE 
+%doc COPYING COPYING-LGPL AUTHORS README TRANSLATE 
 %{_bindir}/spacefm
 %{_bindir}/spacefm-auth
 %{_datadir}/applications/spacefm-find.desktop
@@ -55,13 +55,16 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/spacefm
 
 %changelog
-* Sun Nov 04 2012 Minh Ngo <minh@fedorapeople.org> 0.8.2-3
+* Thu Nov 22 2012 Minh Ngo <minh@fedoraproject.org> 0.8-2-4
+- Removing INSTALL and NEWS files
+
+* Sun Nov 04 2012 Minh Ngo <minh@fedoraproject.org> 0.8.2-3
 - fixing licenses
 - updating dependencies
 
-* Sun Nov 04 2012 Minh Ngo <minh@fedorapeople.org> 0.8.2-2
+* Sun Nov 04 2012 Minh Ngo <minh@fedoraproject.org> 0.8.2-2
 - validate desktop files
 - adding some scriptlets for mime files
 
-* Sun Nov 04 2012 Minh Ngo <minh@fedorapeople.org> 0.8.2-1
+* Sun Nov 04 2012 Minh Ngo <minh@fedoraproject.org> 0.8.2-1
 - initial build
