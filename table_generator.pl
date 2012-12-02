@@ -24,16 +24,14 @@ while (<FILE>) {
             "    <td>$status</td>\n";
 
     print "    <td>";
-    if ($ticket =~ m/None/) {
+    if (!($ticket =~ m/None.*/)) {
       print "<a href=\"" . BUGZILLA_URL . "$ticket\">#$ticket</a>";
     }
 
     print "</td>\n    <td>";
     if ($git =~ m/Fedora/) {
-      print "<a href=\"" . GIT_URL . "$package_name\">$package_name</a>";
+      print "<a href=\"" . GIT_URL . "$package_name.git\">$package_name.git</a>";
     }
-
-    print "</td>\n    <td>";
 
     print "</td>\n    <td>";
     if (!($info =~ m/None.*/)) {
