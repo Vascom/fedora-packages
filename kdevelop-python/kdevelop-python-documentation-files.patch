@@ -1,0 +1,57 @@
+--- documentation_files/__builtin_constants__.py	2012-11-25 11:03:33.000000000 +0200
++++ documentation_files/__builtin_constants__.py	2012-12-02 13:31:01.041354577 +0200
+@@ -23,7 +23,7 @@ represent the absence of a value, as whe
+ function.
+ 
+ """
+-None = None
++None
+ """
+ Special value which can be returned by the "rich comparison" special methods
+ (:meth:`__eq__`, :meth:`__lt__`, and friends), to indicate that the comparison
+@@ -44,7 +44,7 @@ See also the :keyword:`assert` statement
+ 
+ 
+ """
+-__debug__ = None
++__debug__ 
+ """exit([code=None])
+ 
+ Objects that when printed, print a message like "Use quit() or Ctrl-D
+@@ -52,4 +52,4 @@ Objects that when printed, print a messa
+ specified exit code.
+ 
+ """
+-quitcode=None = None
++quitcode = None
+--- documentation_files/__builtin_types__.py	2012-11-25 11:03:33.000000000 +0200
++++ documentation_files/__builtin_types__.py	2012-12-02 12:25:42.672213467 +0200
+@@ -44,7 +44,7 @@ class set:
+ 		"""
+ 		pass
+ 		
+-	def set"other(self, ():
++	def set(self, other):
+ 		"""
+ 		Test whether the set is a true subset of *other*, that is,
+ 		``set <= other and set != other``.
+@@ -60,7 +60,7 @@ class set:
+ 		"""
+ 		pass
+ 		
+-	def set"other(self, ():
++	def set(self, other):
+ 		"""
+ 		Test whether the set is a true superset of *other*, that is, ``set >=
+ 		other and set != other``.
+--- documentation_files/subprocess.py	2012-11-25 11:03:33.000000000 +0200
++++ documentation_files/subprocess.py	2012-12-02 13:42:02.566662067 +0200
+@@ -484,7 +484,7 @@ def check_call(ls=None, _l=None):
+        """
+   pass
+ 
+-def check_output(ls=None, _l=None, /dev/null=None):
++def check_output(ls=None, _l=None, dev_null=None):
+   """ Run command with arguments and return its output as a byte string.
+   
+       If the exit code was non-zero it raises a CalledProcessError.  The
