@@ -1,0 +1,10 @@
+| leechcraft         | 0.5.85   | STABLE     | 781260 | Fedora | None              |
+| kchildlock         | 0.90.4.2 | STABLE     | 860542 | Fedora | None              |
+| qxmpp-dev          | 0.6.3    | DEPRECATED | 753262 | Fedora | Replaced by qxmpp |
+| qxmpp              | 0.7.4    | STABLE     | 856414 | Fedora | None              |
+| wicd-kde           | 0.3.0    | STABLE     | 711313 | Fedora | None              |
+| kfaenza-icon-theme | 0.8.9    | STABLE     | 832666 | Fedora | None              |
+| opensonic          | 0.1.4    | REJECTED   | 806596 | None   | Licensing         |
+| spacefm            | 0.8.2    | PENDING    | 872966 | None   | None              |
+| skb                | 0.4      | PENDING    | 873793 | None   | None              |
+| kdevelop-python    | 1.4.1    | PENDING    | None   | None   | None              |

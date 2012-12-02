@@ -12,8 +12,11 @@ BuildRequires:  kdevplatform-devel
 BuildRequires:  kdevelop-devel 
 BuildRequires:  kdevelop-pg-qt-devel
 BuildRequires:  cmake >= 2.6
+BuildRequires:  desktop-file-utils
 
 %description
+Python language support for KDevelop Integrated Development
+Environment.
 
 %prep
 %setup -qn kdev-python-v%{version}
@@ -28,6 +31,19 @@ make %{?_smp_mflags} -C %{_target_platform}
 
 %install
 make install/fast DESTDIR=${RPM_BUILD_ROOT} -C %{_target_platform}
+
+%check
+desktop-file-validate ${RPM_BUILD_ROOT}/%{_kde4_datadir}/kde4/services/kdevpythonsupport.desktop 
+desktop-file-validate ${RPM_BUILD_ROOT}/%{_kde4_datadir}/kde4/services/kdevpdb.desktop
+
+%post
+update-desktop-database &> /dev/null || :
+update-mime-database %{_datadir}/mime &> /dev/null || :
+
+%postun
+update-desktop-database &> /dev/null || :
+update-mime-database %{_datadir}/mime &> /dev/null || :
+
 
 %files
 %doc DESIGN TODO README TODO 
