@@ -84,6 +84,14 @@ Future fedora packages
     <td></td>
     <td></td>
   </tr>
+  <tr>
+    <td><a href="https://apps.fedoraproject.org/packages/kdevelop-python">kdevelop-python</a></td>
+    <td>1.4.1</td>
+    <td>PENDING</td>
+    <td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=885317">#885317</a></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 
 Other related tickets:
