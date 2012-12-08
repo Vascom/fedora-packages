@@ -1,3 +1,5 @@
+%global __python %{__python}2.7
+
 Name:       kdevelop-python 
 Version:    1.4.1 
 Release:    1%{?dist}
@@ -13,6 +15,7 @@ BuildRequires:  kdevelop-devel
 BuildRequires:  kdevelop-pg-qt-devel
 BuildRequires:  cmake >= 2.6
 BuildRequires:  desktop-file-utils
+BuildRequires:  python(abi) = 2.7
 
 %description
 Python language support for KDevelop Integrated Development
@@ -32,9 +35,13 @@ make %{?_smp_mflags} -C %{_target_platform}
 %install
 make install/fast DESTDIR=${RPM_BUILD_ROOT} -C %{_target_platform}
 
-%check
-desktop-file-validate ${RPM_BUILD_ROOT}/%{_kde4_datadir}/kde4/services/kdevpythonsupport.desktop 
-desktop-file-validate ${RPM_BUILD_ROOT}/%{_kde4_datadir}/kde4/services/kdevpdb.desktop
+desktop-file-install \
+  --dir=${RPM_BUILD_ROOT}%{_kde4_datadir}/kde4/services/ \
+  --remove-key=Encoding \
+  --remove-key=Type \
+  --set-key=Type \
+  --set-value=Application \
+  ${RPM_BUILD_ROOT}/%{_kde4_datadir}/kde4/services/kdevpythonsupport.desktop  
 
 %post
 update-desktop-database &> /dev/null || :
@@ -43,7 +50,6 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %postun
 update-desktop-database &> /dev/null || :
 update-mime-database %{_datadir}/mime &> /dev/null || :
-
 
 %files
 %doc DESIGN TODO README TODO 
