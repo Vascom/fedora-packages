@@ -15,7 +15,7 @@ Future fedora packages
   <tr>
     <td><a href="https://apps.fedoraproject.org/packages/leechcraft">leechcraft</a></td>
     <td>0.5.85</td>
-    <td>STABLE</td>
+    <td>DEPRECATED</td>
     <td><a href="https://bugzilla.redhat.com/show_bug.cgi?id=781260">#781260</a></td>
     <td><a href="http://pkgs.fedoraproject.org/cgit/leechcraft.git">leechcraft.git</a></td>
     <td></td>
