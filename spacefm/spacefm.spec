@@ -1,8 +1,8 @@
 Name:       spacefm 
-Version:    0.8.2
-Release:    4%{?dist}
+Version:    0.8.4
+Release:    1%{?dist}
 License:    GPLv3 and LGPLv3
-Source0:    http://downloads.sourceforge.net/spacefm/spacefm-0.8.2.tar.xz
+Source0:    http://downloads.sourceforge.net/spacefm/spacefm-0.8.4.tar.xz
 
 Summary:    Space FM File Manager 
 URL:        http://ignorantguru.github.com/spacefm/  
@@ -14,7 +14,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  startup-notification-devel 
 
 %description
-SpaceFM is a multi-panel tabbed file manager for Linux with built-in VFS,
+SpaceFM is a multiple panel tabbed file manager for Linux with built-in VFS,
 udev-based device manager, customizable menu system, and bash integration. 
 
 %prep
@@ -49,13 +49,17 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/applications/spacefm-find.desktop
 %{_datadir}/applications/spacefm-folder-handler.desktop
 %{_datadir}/applications/spacefm.desktop
+%{_datadir}/icons/hicolor/*/apps/*
+%{_datadir}/icons/Faenza/apps/48/*
 %doc %{_datadir}/doc/spacefm
 %{_datadir}/mime/packages/spacefm-mime.xml
-%{_datadir}/pixmaps/spacefm*
 %{_datadir}/spacefm
 
 %changelog
-* Thu Nov 22 2012 Minh Ngo <minh@fedoraproject.org> 0.8-2-4
+* Tue Jan 14 2013 Minh Ngo <minh@fedoraproject.org> 0.8.4-1
+- New version
+
+* Thu Nov 22 2012 Minh Ngo <minh@fedoraproject.org> 0.8.2-4
 - Removing INSTALL and NEWS files
 
 * Sun Nov 04 2012 Minh Ngo <minh@fedoraproject.org> 0.8.2-3
