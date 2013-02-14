@@ -1,6 +1,7 @@
+%global _missing_build_ids_terminate_build 0
 Name:       chicken 
 Version:    4.7.0.6
-Release:    2%{?dist}
+Release:    3%{?dist}
 License:    GPLv2 and BSD and MIT
 Source0:    http://code.call-cc.org/stability/4.7.0/chicken-4.7.0.6.tar.gz
 
@@ -31,15 +32,21 @@ CHICKEN Scheme compiler documentation.
 %setup -q
 
 %build
-make %{?_smp_mflags}  PLATFORM=linux STATICBUILD=1 PREFIX=%{_prefix} LIBDIR=%{_libdir}
+CFLAGS="%{optflags}" make %{?_smp_mflags}  PLATFORM=linux STATICBUILD=1 PREFIX=%{_prefix} LIBDIR=%{_libdir}
 
 %install
 %make_install PLATFORM=linux PREFIX=%{_prefix} LIBDIR=%{_libdir}
 rm ${RPM_BUILD_ROOT}/%{_libdir}/libchicken.a
+
+cp -r manual-html ${RPM_BUILD_ROOT}/%{_datadir}/chicken/doc/
+
 %post -n %{name} -p /sbin/ldconfig
 %postun -n %{name} -p /sbin/ldconfig
 
 %files
+%doc LICENSE NEWS* README*
+%doc %{_mandir}/man1/chicken*
+%doc %{_mandir}/man1/cs?.1.gz
 %{_libdir}/libchicken.so.6
 %{_libdir}/chicken
 %{_bindir}/csc
@@ -59,10 +66,14 @@ rm ${RPM_BUILD_ROOT}/%{_libdir}/libchicken.a
 
 %files doc
 %doc %{_datadir}/chicken/doc
-%doc %{_mandir}/man1/chicken*
-%doc %{_mandir}/man1/cs?.1.gz
 
 %changelog
+* Thu Feb 14 2013 Minh Ngo <minh@fedoraproject.org> 4.7.0.6-3
+- Adding LICENSE NEWS* README* files to the base package
+- Moving man pages to the base package 
+- Adding html manuals into the doc package
+- Adding %{optflags} before building
+
 * Tue Jan 14 2013 Minh Ngo <minh@fedoraproject.org> 4.7.0.6-2
 - Removing the static lib
 - optflags
