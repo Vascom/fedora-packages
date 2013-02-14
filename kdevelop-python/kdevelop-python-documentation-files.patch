@@ -1,4 +1,4 @@
-# This patch must needed because Fedora Package builder tries to compile all of python files
+# This patch must be needed because Fedora Package builder tries to compile all of python files
 # into byte codes. There are some syntax errors in these files, so the package building process
 # will be failed without this patch.
 --- documentation_files/__builtin_constants__.py	2012-11-25 11:03:33.000000000 +0200
