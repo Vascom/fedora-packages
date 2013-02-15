@@ -1,8 +1,8 @@
 Name:       spacefm 
-Version:    0.8.4
+Version:    0.8.5
 Release:    1%{?dist}
 License:    GPLv3 and LGPLv3
-Source0:    http://downloads.sourceforge.net/spacefm/spacefm-0.8.4.tar.xz
+Source0:    http://downloads.sourceforge.net/spacefm/spacefm-0.8.5.tar.xz
 
 Summary:    Space FM File Manager 
 URL:        http://ignorantguru.github.com/spacefm/  
@@ -56,6 +56,9 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_datadir}/spacefm
 
 %changelog
+* Sun Jan 27 2013 Minh Ngo <minh@fedoraproject.org> 0.8.5-1
+- New version
+
 * Tue Jan 14 2013 Minh Ngo <minh@fedoraproject.org> 0.8.4-1
 - New version
 

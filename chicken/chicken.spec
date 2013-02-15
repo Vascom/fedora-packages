@@ -40,13 +40,23 @@ rm ${RPM_BUILD_ROOT}/%{_libdir}/libchicken.a
 
 cp -r manual-html ${RPM_BUILD_ROOT}/%{_datadir}/chicken/doc/
 
+%{?filter_setup:
+%filter_provides_in %{_libdir}/%{name}/?/
+%filter_setup
+}
+
 %post -n %{name} -p /sbin/ldconfig
 %postun -n %{name} -p /sbin/ldconfig
+
+%check
+%__arch_install_post \
+/usr/lib/rpm/check-rpaths \
+/usr/lib/rpm/check-buildroot
 
 %files
 %doc LICENSE NEWS* README*
 %doc %{_mandir}/man1/chicken*
-%doc %{_mandir}/man1/cs?.1.gz
+%doc %{_mandir}/man1/cs?.1.*
 %{_libdir}/libchicken.so.6
 %{_libdir}/chicken
 %{_bindir}/csc
@@ -73,6 +83,8 @@ cp -r manual-html ${RPM_BUILD_ROOT}/%{_datadir}/chicken/doc/
 - Moving man pages to the base package 
 - Adding html manuals into the doc package
 - Adding %{optflags} before building
+- Adding library filter
+- Moving include files to the devel package
 
 * Tue Jan 14 2013 Minh Ngo <minh@fedoraproject.org> 4.7.0.6-2
 - Removing the static lib
