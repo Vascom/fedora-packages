@@ -1,8 +1,8 @@
 Name:       kdevelop-python 
-Version:    1.4.1 
+Version:    1.5.0
 Release:    2%{?dist}
 License:    GPLv2
-Source0:    http://download.kde.org/stable/kdevelop/kdev-python/1.4.1/src/kdev-python-v1.4.1.tar.bz2 
+Source0:    http://download.kde.org/stable/kdevelop/kdev-python/1.5.0/src/kdev-python-v1.5.0.tar.bz2
 Patch0:     kdevelop-python-documentation-files.patch 
 
 Summary:    Python Plugin for KDevelop 
@@ -37,6 +37,7 @@ make install/fast DESTDIR=${RPM_BUILD_ROOT} -C %{_target_platform}
 %files
 %doc DESIGN TODO README TODO 
 %{_kde4_libdir}/kde4/kdevpythonlanguagesupport.so
+%{_kde4_libdir}/kde4/kcm_pep8.so
 %{_kde4_libdir}/libkdev4pythonduchain.so
 %{_kde4_libdir}/kde4/kdevpdb.so
 %{_kde4_appsdir}/kdevappwizard/templates/*
@@ -46,9 +47,12 @@ make install/fast DESTDIR=${RPM_BUILD_ROOT} -C %{_target_platform}
 %{_kde4_libdir}/libkdev4pythoncompletion.so
 %{_kde4_datadir}/kde4/services/kdevpdb.desktop
 %{_kde4_datadir}/kde4/services/kdevpythonsupport.desktop 
+%{_kde4_datadir}/kde4/services/kcm_kdevpythonpep8.desktop
 %{_kde4_appsdir}/kdevpythonsupport
 
 %changelog
+* Sat May 11 2013 Tobias Herbert <blubbme@gmx.com> 1.5.0-1
+- version bump to 1.5.0
 * Thu Feb 14 2013 Minh Ngo <minh@fedoraproject.org> 1.4.1-2
 - have added _kde4_appsdir macro
 - have dropped updata-mime-database scriptlets
