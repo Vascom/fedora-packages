@@ -1,8 +1,8 @@
 Name:       kdevelop-python 
-Version:    1.5.0
+Version:    1.5.1
 Release:    2%{?dist}
 License:    GPLv2
-Source0:    http://download.kde.org/stable/kdevelop/kdev-python/1.5.0/src/kdev-python-v1.5.0.tar.bz2
+Source0:    http://download.kde.org/stable/kdevelop/kdev-python/1.5.1/src/kdev-python-v1.5.1.tar.bz2
 Patch0:     kdevelop-python-documentation-files.patch 
 
 Summary:    Python Plugin for KDevelop 
@@ -51,6 +51,8 @@ make install/fast DESTDIR=${RPM_BUILD_ROOT} -C %{_target_platform}
 %{_kde4_appsdir}/kdevpythonsupport
 
 %changelog
+* Sun May 19 2013 Tobias Herbert <blubbme@gmx.com> 1.5.1-1
+- 1.5.1
 * Sat May 11 2013 Tobias Herbert <blubbme@gmx.com> 1.5.0-1
 - version bump to 1.5.0
 * Thu Feb 14 2013 Minh Ngo <minh@fedoraproject.org> 1.4.1-2
