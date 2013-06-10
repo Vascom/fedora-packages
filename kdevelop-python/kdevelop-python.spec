@@ -26,16 +26,17 @@ mkdir -p %{_target_platform}
 pushd %{_target_platform}
 %{cmake_kde4} ../
 popd
-make %{?_smp_mflags} -C %{_target_platform} 
+make %{?_smp_mflags} -C %{_target_platform}
 
 %install
-make install/fast DESTDIR=${RPM_BUILD_ROOT} -C %{_target_platform}
+make install/fast DESTDIR=%{buildroot} -C %{_target_platform}
+chmod +x %{buildroot}%{_kde4_libdir}/libpython%{python_version}-kdevelop.so.1.0
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
-%doc DESIGN TODO README TODO 
+%doc DESIGN TODO README
 %{_kde4_libdir}/kde4/kdevpythonlanguagesupport.so
 %{_kde4_libdir}/kde4/kcm_pep8.so
 %{_kde4_libdir}/libkdev4pythonduchain.so
